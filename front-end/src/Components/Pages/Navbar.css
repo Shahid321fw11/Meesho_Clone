@@ -5,15 +5,59 @@
 
 .first_nav {
     display: flex;
-    height: 72px;
-    background-color: #00ffff;
-    /* justify-content: center; */
+    /* background-color: #00ffff; */
     justify-content: space-between;
-    flex-direction: row;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
-/* .first_nav>div {
-    background-color: #f1f1f1;
-} */
+.left_first_nav {
+    min-width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+#cen:hover {
+    color: palevioletred;
+}
+
+.left_first_nav>#cen {
+    align-self: center;
+}
+
+
+.profile_and_cart {
+    display: flex;
+    flex-direction: column;
+}
+
+.bar {
+    background-color: rgb(223, 223, 223);
+    border-radius: 2px;
+    width: 2px;
+    height: 40px;
+}
+
+.download_app {
+    display: flex;
+}
+
+#search_bar {
+    position: relative;
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 5px;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+}
+
+#search_bar>input {
+    border: 0;
+    width: 85%;
+    outline: 0;
+
+}
