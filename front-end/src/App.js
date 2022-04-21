@@ -1,7 +1,7 @@
-import HomePage from "./Components/Pages/HomePage";
+// import HomePage from "./Components/Pages/HomePage";
 import Navbar from "./Components/Pages/Navbar";
 import Product from "./Components/Pages/Product";
-// import './Components/Pages/Navbar.css';
+import './Components/Pages/Navbar.css';
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Navbar />
       {/* <HomePage /> */}
       <Product />
+      {/* <HomePageProduct /> */}
     </>
   );
 }

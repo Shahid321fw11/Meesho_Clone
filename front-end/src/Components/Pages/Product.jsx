@@ -1,45 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react'
 import Data from '../../data/db';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
-
-console.log(Data)
 const Product = () => {
     return <>
-        <div style={{ display: "flex" }}>
-            {
-                Data.map((e) => {
-                    return <>
-                        <Card sx={{ maxWidth: 300, margin: "10px" }}>
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image="{e.image}"
-                                alt="green iguana"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {e.title}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {e.description}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small">Share</Button>
-                                <Button size="small">Learn More</Button>
-                            </CardActions>
-                        </Card>
+        <div id='sproduct'>
+            {Data.map((el, i) => {
+                return <>
+                    <div key={i} className="card" style={{ textDecoration: 'none' }} to={`product/${el.id}`}>
+                        <div>
+                            <img width="100%" className="cardimg" src={el.images[0]} alt="product img" />
+                        </div>
+                        <div className="tbox">
+                            <div className="title">
+                                <span>{el.title}</span>
+                            </div>
+                            <div className="amount">
+                                <div className="actualprice">&#x20b9;{el.discounted_price}</div>
+                                <div className="discountprice">&#x20b9;{el.original_price}</div>
+                                <div className="discount">{Math.floor(((el.original_price - el.discounted_price) / el.original_price) * 100)}%off</div>
+                            </div>
+                            <div style={{ color: '#999999' }}>
+                                <i className='fas fa-badge-percent' style={{ fontSize: '24px', color: '#5585F8', margin: '10px' }}>&#xf02c;</i>   &#x20b9;{el.original_price - el.discounted_price} discount on 1st order
 
-                    </>
-                })
-            }
+                            </div>
+                            <div className="free">
+                                Free Delivery
+                            </div>
+                            <div style={{ display: "flex", justifyContent: 'space-between' }}>
+                                <div className="rating">
+                                    <span className="fa fa-star checked"></span>
+                                    {el.rating}
+                                </div>
+                                {/* <AddShoppingCartIcon style={{marginTop:'8px',color:'#5585F8'}}/> */}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </>
+            })}
+
         </div>
+
+
     </>
 }
 
