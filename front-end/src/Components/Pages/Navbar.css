@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0%;
+}
+
+.first_nav {
+    display: flex;
+    height: 72px;
+    background-color: #00ffff;
+    /* justify-content: center; */
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* .first_nav>div {
+    background-color: #f1f1f1;
+} */
