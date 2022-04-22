@@ -1,48 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Data from '../../data/db';
+import Card from '@mui/material/Card';
+import StarRateIcon from '@mui/icons-material/StarRate';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 
+console.log(Data)
 const Product = () => {
     return <>
-        <div id='sproduct'>
-            {Data.map((el, i) => {
-                return <>
-                    <div key={i} className="card" style={{ textDecoration: 'none' }} to={`product/${el.id}`}>
-                        <div>
-                            <img width="100%" className="cardimg" src={el.images[0]} alt="product img" />
-                        </div>
-                        <div className="tbox">
-                            <div className="title">
-                                <span>{el.title}</span>
-                            </div>
-                            <div className="amount">
-                                <div className="actualprice">&#x20b9;{el.discounted_price}</div>
-                                <div className="discountprice">&#x20b9;{el.original_price}</div>
-                                <div className="discount">{Math.floor(((el.original_price - el.discounted_price) / el.original_price) * 100)}%off</div>
-                            </div>
-                            <div style={{ color: '#999999' }}>
-                                <i className='fas fa-badge-percent' style={{ fontSize: '24px', color: '#5585F8', margin: '10px' }}>&#xf02c;</i>   &#x20b9;{el.original_price - el.discounted_price} discount on 1st order
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
+            {
+                Data.map((e) => {
+                    return <>
+                        <Card sx={{ width: '18rem', margin: "10px" }}>
+                            <CardMedia
+                                component="img"
+                                height="400"
+                                image={e.images[0]}
+                            />
+                            <CardContent>
+                                <Typography variant="body2" color="text.secondary" style={{ fontSize: "small" }}>
+                                    {e.title}
+                                </Typography>
 
-                            </div>
-                            <div className="free">
-                                Free Delivery
-                            </div>
-                            <div style={{ display: "flex", justifyContent: 'space-between' }}>
-                                <div className="rating">
-                                    <span className="fa fa-star checked"></span>
-                                    {el.rating}
+                                <div style={{ display: 'flex' }}>
+                                    <Typography style={{ fontWeight: 'bold', }}>₹​{e.discounted_price}</Typography>
+                                    <Typography style={{ textDecoration: 'line-through', marginLeft: '1rem', color: 'lightslategray' }}>{e.original_price}</Typography>
+                                    <Typography style={{ marginLeft: '1rem', color: '#038D63' }}>{Math.floor(((e.original_price - e.discounted_price) / e.original_price) * 100)}% off</Typography>
+
                                 </div>
-                                {/* <AddShoppingCartIcon style={{marginTop:'8px',color:'#5585F8'}}/> */}
-                            </div>
-                        </div>
 
-                    </div>
+                                <Typography style={{ color: 'lightslategray' }}>₹​{e.original_price - e.discounted_price} discount on first order</Typography>
 
-                </>
-            })}
+                                <div style={{ display: 'flex', height: '20%', maxWidth: '22%', border: '', backgroundColor: '#038D63', borderRadius: '40%', alignItems: 'center' }}>
+                                    <Typography style={{ marginLeft: '5px' }}>{e.rating} </Typography>
+                                    <Typography style={{}}><StarRateIcon style={{}} /> </Typography>
 
+                                </div>
+
+
+
+
+                            </CardContent>
+                        </Card>
+
+                    </>
+                })
+            }
         </div>
-
-
     </>
 }
 
