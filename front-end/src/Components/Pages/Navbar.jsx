@@ -55,9 +55,9 @@ const Navbar = () => {
         <a href="/WomenWestern">Women Western</a>
         <a href="/JewelleryAccessories">Jewellery & Accessories</a>
         <a href="/Men">Men</a>
-        <a href="">Beauty & Health</a>
-        <a href="">Bags & Footwear</a>
-        <a href="">Home & Kitchen</a>
+        <a href="/BeautyAndHealth">Beauty & Health</a>
+        <a href="/BagsFootwear">Bags & Footwear</a>
+        <a href="HomeKitchen">Home & Kitchen</a>
         <a href="">Kids</a>
         <a href="">Electronics</a>
       </div>
