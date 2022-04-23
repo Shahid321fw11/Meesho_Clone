@@ -5,12 +5,17 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Navbar.css';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ReactComponent as Logo } from '../../SVG/Logo.svg';
+// import { Link } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
   const [search, setSearch] = useState('');
   // const navigate = useNavigate();
+
+  // function WomenEthnic() {
+  //   navigate('/WomenEthnic');
+  // }
 
   return <>
     <div className='Header'>
@@ -70,6 +75,9 @@ const Navbar = () => {
       <hr></hr>
       <div className="second_nav">
         <a href="/WomenEthnic">Women Ethnic</a>
+        {/* <a onClick={WomenEthnic}>Women Ethnic</a> */}
+
+
         <a href="/WomenWestern">Women Western</a>
         <a href="/JewelleryAccessories">Jewellery & Accessories</a>
         <a href="/Men">Men</a>

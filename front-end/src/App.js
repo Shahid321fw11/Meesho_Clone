@@ -20,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Product />}></Route>
-          <Route path='/WomenEthnic' element={<WomenEthnic />}></Route>
+          <Route exact path='/WomenEthnic' element={<WomenEthnic />}></Route>
           <Route path='/WomenWestern' element={<WomenWestern />}></Route>
           <Route path='/JewelleryAccessories' element={<JewelleryAccessories />}></Route>
           <Route path='/Men' element={<Men />}></Route>
