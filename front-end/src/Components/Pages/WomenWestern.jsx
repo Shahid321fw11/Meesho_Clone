@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Data from '../../data/db'
 import Card from '@mui/material/Card';
 import StarRateIcon from '@mui/icons-material/StarRate';
@@ -6,12 +6,27 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
+var data_dresses = Data.filter((e) => {
+    if (e.category === 'Dresses') {
+        return e;
+    }
+})
 
 const WomenWestern = () => {
+    // pagination
+    const [currentPage, setCurrentPage] = useState(1);
+    const [array, setArray] = useState([]);
+    const postsPerPage = 10;
+    useEffect(() => {
+        const start = currentPage * postsPerPage - postsPerPage;
+        const end = currentPage * postsPerPage;
+        setArray(data_dresses.slice(start, end));
+    }, [currentPage]);
+
     return <>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
             {
-                Data.map((e) => {
+                array.map((e) => {
                     if (e.category === 'Dresses') {
                         return <>
                             <Card sx={{ width: '18rem', margin: "10px" }}>
@@ -46,9 +61,12 @@ const WomenWestern = () => {
                 })
             }
         </div>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+            <button style={{ margin: '2%' }} onClick={() => { setCurrentPage(currentPage - 1) }} disabled={currentPage <= 1}>prev</button>
+            <button style={{ margin: '2%' }} onClick={() => { setCurrentPage(currentPage + 1) }} disabled={currentPage === Math.floor(data_dresses.length / postsPerPage) + 1}  >Next</button>
+        </div>
 
     </>
-
 }
 
-export default WomenWestern
+export default WomenWestern;

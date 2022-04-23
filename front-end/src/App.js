@@ -10,6 +10,7 @@ import Men from "./Components/Pages/Men";
 import BeautyAndHealth from "./Components/Pages/BeautyAndHealth";
 import BagsFootwear from "./Components/Pages/BagsFootwear";
 import HomeKitchen from "./Components/Pages/HomeKitchen";
+import ShowData from "./Components/Pages/ShowData";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/BeautyAndHealth' element={<BeautyAndHealth />}></Route>
           <Route path='/BagsFootwear' element={<BagsFootwear />}></Route>
           <Route path='/HomeKitchen' element={<HomeKitchen />}></Route>
+          <Route path='/ShowData/:search' element={<ShowData />}></Route>
 
         </Routes>
       </BrowserRouter>

@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Navbar.css';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ReactComponent as Logo } from '../../SVG/Logo.svg';
+// import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+  const [search, setSearch] = useState('');
+  // const navigate = useNavigate();
+
   return <>
     <div className='Header'>
       <div className='first_nav'>
@@ -14,7 +19,20 @@ const Navbar = () => {
 
         <div id='search_bar'>
           < SearchIcon />
-          <input type="text" placeholder="Try Saree, Kurti or Search by Product Code" />
+          <input type="text" placeholder="Try Saree, Kurti or Search by Product Code" onChange={(e) => {
+            setSearch(e.target.value);
+            console.log(search);
+          }}
+            // on enter key press
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                // navigate('/search/' + search);
+                console.log(search);
+              }
+            }}
+
+          />
+
         </div>
 
         <div className='left_first_nav'>
