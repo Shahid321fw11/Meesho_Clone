@@ -1,21 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Navbar.css';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ReactComponent as Logo } from '../../SVG/Logo.svg';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../../Context/searchContext';
 // import { Link } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
-  const [search, setSearch] = useState('');
+  // const [search, setSearch] = useState('');
   // const navigate = useNavigate();
 
   // function WomenEthnic() {
   //   navigate('/WomenEthnic');
   // }
+
+  const { setSearch_2, serchValue } = useContext(AppContext);
+  // console.log(serchValue, setSearch_2);
+
+
 
   return <>
     <div className='Header'>
@@ -25,14 +32,16 @@ const Navbar = () => {
         <div id='search_bar'>
           < SearchIcon />
           <input type="text" placeholder="Try Saree, Kurti or Search by Product Code" onChange={(e) => {
-            setSearch(e.target.value);
-            console.log(search);
+
+            setSearch_2(e.target.value);
+            // console.log(search);
           }}
             // on enter key press
             onKeyPress={(e) => {
               if (e.key === 'Enter') {
+
                 // navigate('/search/' + search);
-                console.log(search);
+                // console.log(search);
               }
             }}
 
@@ -77,6 +86,8 @@ const Navbar = () => {
         <a href="/WomenEthnic">Women Ethnic</a>
         {/* <a onClick={WomenEthnic}>Women Ethnic</a> */}
 
+        {/* add a Link to homepage */}
+        {/* <Link to={''}>hello</Link > */}
 
         <a href="/WomenWestern">Women Western</a>
         <a href="/JewelleryAccessories">Jewellery & Accessories</a>

@@ -11,6 +11,7 @@ import BeautyAndHealth from "./Components/Pages/BeautyAndHealth";
 import BagsFootwear from "./Components/Pages/BagsFootwear";
 import HomeKitchen from "./Components/Pages/HomeKitchen";
 import ShowData from "./Components/Pages/ShowData";
+import SearchPage from "./Components/Pages/SearchPage";
 
 function App() {
   return (
@@ -27,8 +28,7 @@ function App() {
           <Route path='/BeautyAndHealth' element={<BeautyAndHealth />}></Route>
           <Route path='/BagsFootwear' element={<BagsFootwear />}></Route>
           <Route path='/HomeKitchen' element={<HomeKitchen />}></Route>
-          <Route path='/ShowData/:search' element={<ShowData />}></Route>
-
+          <Route path='/search' element={<SearchPage />}></Route>
         </Routes>
       </BrowserRouter>
       {/* <SearchPage /> */}
