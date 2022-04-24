@@ -28,6 +28,9 @@ const SearchPage = () => {
                     else if (e.category.toLocaleLowerCase().includes(serchValue.toLocaleLowerCase())) {
                         return e;
                     }
+                    else {
+                        return <PageNotFound />;
+                    }
 
 
 

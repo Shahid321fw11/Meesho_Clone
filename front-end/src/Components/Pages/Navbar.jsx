@@ -26,7 +26,8 @@ const Navbar = () => {
   return <>
     <div className='Header'>
       <div className='first_nav'>
-        <div id=''><Logo /></div>
+        <Link to='/'><Logo /></Link>
+
 
         <div id='search_bar'>
           < SearchIcon />
