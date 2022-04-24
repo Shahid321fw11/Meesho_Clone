@@ -83,20 +83,29 @@ const Navbar = () => {
       </div>
       <hr></hr>
       <div className="second_nav">
-        <a href="/WomenEthnic">Women Ethnic</a>
+
         {/* <a onClick={WomenEthnic}>Women Ethnic</a> */}
 
         {/* add a Link to homepage */}
-        {/* <Link to={''}>hello</Link > */}
+        {/* <Link to={'/WomenEthnic'}><a href="/WomenEthnic">Women Ethnic</a></Link > */}
+        <Link to={'/WomenEthnic'}>Women Ethnic</Link >
+        <Link to={'/WomenWestern'}>Women Western</Link >
+        <Link to={'/JewelleryAccessories'}>Jewellery & Accessories</Link >
+        <Link to={'/Men'}>Men</Link >
+        <Link to={'/BeautyAndHealth'}>Beauty & Health</Link >
+        <Link to={'/BagsFootwear'}>Bags & Footwear</Link >
+        <Link to={'/HomeKitchen'}>Home & Kitchen</Link >
+        <Link to={'/'}>Kids</Link >
+        <Link to={'/'}>Electronics</Link >
 
-        <a href="/WomenWestern">Women Western</a>
-        <a href="/JewelleryAccessories">Jewellery & Accessories</a>
-        <a href="/Men">Men</a>
-        <a href="/BeautyAndHealth">Beauty & Health</a>
-        <a href="/BagsFootwear">Bags & Footwear</a>
-        <a href="HomeKitchen">Home & Kitchen</a>
-        <a href="">Kids</a>
-        <a href="">Electronics</a>
+        {/* <a href="/"></a>
+        <a href="/"></a>
+        <a href="/Men"></a>
+        <a href="/"></a>
+        <a href="/"></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a> */}
       </div>
       <hr></hr>
     </div>
