@@ -7,7 +7,6 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ReactComponent as Logo } from '../../SVG/Logo.svg';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../Context/searchContext';
-// import { Link } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -83,11 +82,6 @@ const Navbar = () => {
       </div>
       <hr></hr>
       <div className="second_nav">
-
-        {/* <a onClick={WomenEthnic}>Women Ethnic</a> */}
-
-        {/* add a Link to homepage */}
-        {/* <Link to={'/WomenEthnic'}><a href="/WomenEthnic">Women Ethnic</a></Link > */}
         <Link to={'/WomenEthnic'}>Women Ethnic</Link >
         <Link to={'/WomenWestern'}>Women Western</Link >
         <Link to={'/JewelleryAccessories'}>Jewellery & Accessories</Link >
@@ -98,14 +92,6 @@ const Navbar = () => {
         <Link to={'/'}>Kids</Link >
         <Link to={'/'}>Electronics</Link >
 
-        {/* <a href="/"></a>
-        <a href="/"></a>
-        <a href="/Men"></a>
-        <a href="/"></a>
-        <a href="/"></a>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a> */}
       </div>
       <hr></hr>
     </div>

@@ -11,7 +11,6 @@ var data_sarees = Data.filter((e) => {
         return e;
     }
 })
-console.log(data_sarees, 'saree');
 
 const WomenEthnic = () => {
     // pagination

@@ -20,7 +20,7 @@ function App() {
       <HomePage />
       {/* <BrowserRouter> */}
       <Routes>
-        <Route path='/' element={<Product />}></Route>
+        {/* <Route path='/' element={<Product />}></Route> */}
         <Route exact path='/WomenEthnic' element={<WomenEthnic />}></Route>
         <Route path='/WomenWestern' element={<WomenWestern />}></Route>
         <Route path='/JewelleryAccessories' element={<JewelleryAccessories />}></Route>
@@ -28,7 +28,7 @@ function App() {
         <Route path='/BeautyAndHealth' element={<BeautyAndHealth />}></Route>
         <Route path='/BagsFootwear' element={<BagsFootwear />}></Route>
         <Route path='/HomeKitchen' element={<HomeKitchen />}></Route>
-        {/* <Route path='/ ' element={<SearchPage />}></Route> */}
+        <Route path='/' element={<SearchPage />}></Route>
       </Routes>
       {/* </BrowserRouter> */}
       {/* <SearchPage /> */}
