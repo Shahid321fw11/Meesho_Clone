@@ -69,4 +69,4 @@ const IndividualPage = () => {
     </>
 }
 
-export default IndividualPage
+export default IndividualPage;

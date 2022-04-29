@@ -7,21 +7,11 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ReactComponent as Logo } from '../../SVG/Logo.svg';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../Context/searchContext';
-// import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
-  // const [search, setSearch] = useState('');
-  // const navigate = useNavigate();
-
-  // function WomenEthnic() {
-  //   navigate('/WomenEthnic');
-  // }
 
   const { setSearch_2, serchValue } = useContext(AppContext);
-  // console.log(serchValue, setSearch_2);
-
-
 
   return <>
     <div className='Header'>
@@ -29,25 +19,12 @@ const Navbar = () => {
         <Link to='/'><Logo /></Link>
 
 
-        <div id='search_bar'>
-          < SearchIcon />
-          <input type="text" placeholder="Try Saree, Kurti or Search by Product Code" onChange={(e) => {
-
-            setSearch_2(e.target.value);
-            // console.log(search);
-          }}
-            // on enter key press
-            onKeyPress={(e) => {
-              if (e.key === 'Enter') {
-
-                // navigate('/search/' + search);
-                // console.log(search);
-              }
-            }}
-
-          />
-
-        </div>
+        <Link to='/search' id='search_bar' style={{ textDecoration: 'none' }}>
+          <div id='search_bar_2'>
+            < SearchIcon style={{ color: 'rgb(244, 51, 151)' }} />
+            <input type="text" placeholder="Try Saree, Kurti or Search by Product Code" onChange={(e) => { setSearch_2(e.target.value) }} />
+          </div>
+        </Link>
 
         <div className='left_first_nav'>
           <div className='download_app' id='cen'>
@@ -90,9 +67,6 @@ const Navbar = () => {
         <Link to={'/BeautyAndHealth'}>Beauty & Health</Link >
         <Link to={'/BagsFootwear'}>Bags & Footwear</Link >
         <Link to={'/HomeKitchen'}>Home & Kitchen</Link >
-        <Link to={'/'}>Kids</Link >
-        <Link to={'/'}>Electronics</Link >
-
       </div>
       <hr></hr>
     </div>
