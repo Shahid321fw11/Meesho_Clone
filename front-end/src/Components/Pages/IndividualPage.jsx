@@ -1,35 +1,11 @@
 import React from 'react'
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Paper } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { productPageReducer } from '../../Redux/Reducer/reducer';
-
-const data = {
-    "_id": "624403caad2d86aa6ca2372a",
-    "id": 94,
-    "category": "Beauty and health",
-    "title": "Premium combinal_price",
-    "original_price": 194,
-    "discounted_price": 136,
-    "sizes": "Free Size",
-    "images": [
-        "https://images.meesho.com/images/products/70586121/mxn5l_512.jpg"
-    ],
-    "details": {
-        "Fabric": "Deodrent",
-        "Pattern": "Liquid Spray",
-        "Multipack": "200ml",
-        "description": "Park Avenue Pvt Ltd"
-    },
-    "rating": 4,
-    "seller_id": 12
-}
 
 const IndividualPage = () => {
     const dispatch = useDispatch();
@@ -56,6 +32,7 @@ const IndividualPage = () => {
 
 
             <div style={{ width: "30%" }}>
+
                 <Paper variant="outlined" >
                     <div style={{ margin: '5%' }}>
                         <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
@@ -76,6 +53,7 @@ const IndividualPage = () => {
                         </div>
                     </div>
                 </Paper>
+
                 <Paper variant="outlined" >
                     <div style={{ margin: '5%' }}>
                         <Typography variant="h6" component="div"> Product Details</Typography>
@@ -83,32 +61,12 @@ const IndividualPage = () => {
                         <Typography variant="overline" component="div" >{productSelector.title}</Typography>
                         <Typography variant="overline" component="div" >CATEGORY : {productSelector.category}</Typography>
                         <Typography variant="overline" component="div" >SIZES : {productSelector.sizes}</Typography>
-                        <Typography variant="overline" component="div" >DESCRIPTION : {productSelector.details.description}</Typography>
                     </div>
                 </Paper>
+
             </div>
         </div>
     </>
 }
 
 export default IndividualPage
-
-
-// text - size - adjust: 100 %;
-// font - family: -apple - system, "Helvetica Neue", sans - serif, "Mier Book";
-// font - size: 16px;
-// font - weight: 400;
-// letter - spacing: 0.5px;
-// line - height: 1.5;
-// text - align: left;
-// margin: 0px;
-// box - sizing: border - box;
-// display: inline - flex;
-// -webkit - box - pack: center;
-// justify - content: center;
-// -webkit - box - align: center;
-// align - items: center;
-// border - radius: 16px;
-// padding: 4px 8px;
-// background: rgb(35, 187, 117);
-// fill: rgb(255, 255, 255);

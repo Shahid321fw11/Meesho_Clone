@@ -5,6 +5,10 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { productPageAction } from '../../Redux/Action/productPageAction';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 
 var data_dresses = Data.filter((e) => {
     if (e.category === 'Bags and Footwear') {
@@ -13,7 +17,6 @@ var data_dresses = Data.filter((e) => {
 })
 
 const BagsFootwear = () => {
-    // pagination
     const [currentPage, setCurrentPage] = useState(1);
     const [array, setArray] = useState([]);
     const postsPerPage = 10;
@@ -23,13 +26,28 @@ const BagsFootwear = () => {
         setArray(data_dresses.slice(start, end));
     }, [currentPage]);
 
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const funDispatch = (data) => {
+        dispatch(productPageAction(data));
+    }
+
+
+
     return <>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
             {
                 array.map((e) => {
                     if (e.category === 'Bags and Footwear') {
                         return <>
-                            <Card sx={{ width: '18rem', margin: "10px" }}>
+                            <Card sx={{ width: '18rem', margin: "10px" }} onClick={() => {
+                                funDispatch(e);
+                                { navigate("/ProductPage") }
+
+                            }}
+                            >
                                 <CardMedia
                                     component="img"
                                     height="400"

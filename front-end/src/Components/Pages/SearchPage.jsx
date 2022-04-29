@@ -12,9 +12,7 @@ import PageNotFound from './PageNotFound';
 
 const SearchPage = () => {
 
-
     const { setSearch_2, serchValue } = useContext(AppContext);
-
     return <>
         {<div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
             {

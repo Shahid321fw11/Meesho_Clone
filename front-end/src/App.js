@@ -2,7 +2,7 @@ import HomePage from "./Components/Pages/HomePage";
 import Navbar from "./Components/Pages/Navbar";
 import Product from "./Components/Pages/Product";
 import './Components/Pages/Navbar.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import WomenEthnic from "./Components/Pages/WomenEthnic";
 import WomenWestern from "./Components/Pages/WomenWestern";
 import JewelleryAccessories from "./Components/Pages/JewelleryAccessories";
@@ -10,7 +10,6 @@ import Men from "./Components/Pages/Men";
 import BeautyAndHealth from "./Components/Pages/BeautyAndHealth";
 import BagsFootwear from "./Components/Pages/BagsFootwear";
 import HomeKitchen from "./Components/Pages/HomeKitchen";
-import ShowData from "./Components/Pages/ShowData";
 import SearchPage from "./Components/Pages/SearchPage";
 import IndividualPage from "./Components/Pages/IndividualPage";
 
@@ -19,7 +18,6 @@ function App() {
     <>
       <Navbar />
       <HomePage />
-      {/* <BrowserRouter> */}
       <Routes>
         <Route path='/' element={<Product />}></Route>
         <Route exact path='/WomenEthnic' element={<WomenEthnic />}></Route>
@@ -32,10 +30,6 @@ function App() {
         <Route path='/' element={<SearchPage />}></Route>
         <Route path='/ProductPage' element={<IndividualPage />}></Route>
       </Routes>
-      {/* </BrowserRouter> */}
-      {/* <SearchPage /> */}
-      {/* <Product /> */}
-      {/* <HomePageProduct /> */}
     </>
   );
 }

@@ -5,6 +5,10 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { productPageAction } from '../../Redux/Action/productPageAction';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 
 var data_jwel = Data.filter((e) => {
     if (e.category === 'Jewellery') {
@@ -23,6 +27,13 @@ const JewelleryAccessories = () => {
         setArray(data_jwel.slice(start, end));
     }, [currentPage]);
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const funDispatch = (data) => {
+        dispatch(productPageAction(data));
+    }
+
     console.log(array);
     return <>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
@@ -30,7 +41,12 @@ const JewelleryAccessories = () => {
                 array.map((e) => {
                     if (e.category === 'Jewellery') {
                         return <>
-                            <Card sx={{ width: '18rem', margin: "10px" }}>
+                            <Card sx={{ width: '18rem', margin: "10px" }} onClick={() => {
+                                funDispatch(e);
+                                { navigate("/ProductPage") }
+
+                            }}
+                            >
                                 <CardMedia
                                     component="img"
                                     height="400"
