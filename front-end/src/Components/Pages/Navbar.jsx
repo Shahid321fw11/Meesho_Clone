@@ -21,7 +21,7 @@ const Navbar = () => {
 
         <Link to='/search' id='search_bar' style={{ textDecoration: 'none' }}>
           <div id='search_bar_2'>
-            < SearchIcon style={{ color: 'rgb(244, 51, 151)' }} />
+            < SearchIcon style={{ color: 'rgb(244, 51, 151) ' }} />
             <input type="text" placeholder="Try Saree, Kurti or Search by Product Code" onChange={(e) => { setSearch_2(e.target.value) }} />
           </div>
         </Link>
