@@ -5,14 +5,31 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { productPageAction } from '../../Redux/Action/productPageAction';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 
 const Product = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const funDispatch = (data) => {
+        dispatch(productPageAction(data));
+    }
+
+
     return <>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
             {
                 Data.map((e) => {
                     return <>
-                        <Card sx={{ width: '18rem', margin: "10px" }}>
+                        <Card sx={{ width: '18rem', margin: "10px" }} onClick={() => {
+                            funDispatch(e);
+                            { navigate("/ProductPage") }
+
+                        }}
+                        >
                             <CardMedia
                                 component="img"
                                 height="400"
@@ -37,9 +54,6 @@ const Product = () => {
                                     <Typography style={{}}><StarRateIcon style={{}} /> </Typography>
 
                                 </div>
-
-
-
 
                             </CardContent>
                         </Card>

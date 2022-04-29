@@ -12,6 +12,7 @@ import BagsFootwear from "./Components/Pages/BagsFootwear";
 import HomeKitchen from "./Components/Pages/HomeKitchen";
 import ShowData from "./Components/Pages/ShowData";
 import SearchPage from "./Components/Pages/SearchPage";
+import IndividualPage from "./Components/Pages/IndividualPage";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <HomePage />
       {/* <BrowserRouter> */}
       <Routes>
-        {/* <Route path='/' element={<Product />}></Route> */}
+        <Route path='/' element={<Product />}></Route>
         <Route exact path='/WomenEthnic' element={<WomenEthnic />}></Route>
         <Route path='/WomenWestern' element={<WomenWestern />}></Route>
         <Route path='/JewelleryAccessories' element={<JewelleryAccessories />}></Route>
@@ -29,6 +30,7 @@ function App() {
         <Route path='/BagsFootwear' element={<BagsFootwear />}></Route>
         <Route path='/HomeKitchen' element={<HomeKitchen />}></Route>
         <Route path='/' element={<SearchPage />}></Route>
+        <Route path='/ProductPage' element={<IndividualPage />}></Route>
       </Routes>
       {/* </BrowserRouter> */}
       {/* <SearchPage /> */}
