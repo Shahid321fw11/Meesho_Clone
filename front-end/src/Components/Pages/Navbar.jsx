@@ -53,7 +53,7 @@ const Navbar = () => {
 
           <div className='profile_and_cart'>
             <ShoppingCartIcon style={{ alignSelf: "center" }} />
-            <p>Cart</p>
+            <Link to='/CartPage'><p>Cart</p></Link>
           </div>
 
         </div>

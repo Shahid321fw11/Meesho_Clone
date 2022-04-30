@@ -6,11 +6,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Paper } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../Redux/Action/cartPageAction';
 
 const IndividualPage = () => {
     const dispatch = useDispatch();
     const productSelector = useSelector((state) => state.productPageReducer.data);
     console.log(productSelector);
+
+
+
     return <>
 
         <div style={{ display: 'flex', justifyContent: "center", }}>
@@ -26,7 +30,7 @@ const IndividualPage = () => {
                             />
                         </Card>
                     </Paper>
-                    <Button variant="contained" style={{ width: '100%', backgroundColor: 'rgb(244, 51, 151)', marginTop: '5%' }}>Add To Cart</Button>
+                    <Button variant="contained" style={{ width: '100%', backgroundColor: 'rgb(244, 51, 151)', marginTop: '5%' }} onClick={() => dispatch(addToCart(productSelector))} >Add To Cart</Button>
                 </div>
             </div>
 

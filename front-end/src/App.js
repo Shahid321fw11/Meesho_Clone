@@ -12,6 +12,7 @@ import BagsFootwear from "./Components/Pages/BagsFootwear";
 import HomeKitchen from "./Components/Pages/HomeKitchen";
 import SearchPage from "./Components/Pages/SearchPage";
 import IndividualPage from "./Components/Pages/IndividualPage";
+import CartPage from "./Components/Pages/CartPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/HomeKitchen' element={<HomeKitchen />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
         <Route path='/ProductPage' element={<IndividualPage />}></Route>
+        <Route path='/CartPage' element={<CartPage />}></Route>
       </Routes>
     </>
   );
