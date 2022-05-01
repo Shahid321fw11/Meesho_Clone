@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <HomePage />
+      {/* <HomePage /> */}
       <Routes>
         <Route path='/' element={<Product />}></Route>
         <Route exact path='/WomenEthnic' element={<WomenEthnic />}></Route>

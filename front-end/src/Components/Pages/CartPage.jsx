@@ -15,6 +15,9 @@ const CartPage = () => {
 
 
     return <>
+        <div style={{ marginTop: "10%", fontSize: 'large', fontWeight: 'bolder', marginLeft: '2%', marginRight: '2%' }} >
+            <h1></h1>
+        </div>
         <div style={{ width: "50%", margin: "auto", }}>
             {selector.map((e) => {
                 return <>
