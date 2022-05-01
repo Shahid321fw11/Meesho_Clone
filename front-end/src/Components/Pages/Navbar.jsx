@@ -51,10 +51,12 @@ const Navbar = () => {
             <p>Profile</p>
           </div>
 
-          <div className='profile_and_cart'>
-            <ShoppingCartIcon style={{ alignSelf: "center" }} />
-            <Link to='/CartPage'><p>Cart</p></Link>
-          </div>
+          <Link to='/cartPage' style={{ textDecoration: 'none' }}>
+            <div className='profile_and_cart'>
+              <ShoppingCartIcon style={{ alignSelf: "center" }} />
+              <p>Cart</p>
+            </div>
+          </Link>
 
         </div>
       </div>
