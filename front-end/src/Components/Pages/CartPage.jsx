@@ -2,16 +2,13 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { List } from '@mui/material';
-import Paper from '@mui/material/Paper';
-import { margin } from '@mui/system';
 
 
 const CartPage = () => {
     const selector = useSelector((state) => state.cartPageReducer.cartData);
     console.log(selector);
+    console.log(selector.length);
 
 
     return <>

@@ -7,11 +7,16 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ReactComponent as Logo } from '../../SVG/Logo.svg';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../Context/searchContext';
+import { Badge } from '@mui/material';
+import MailIcon from '@mui/icons-material/Mail';
+import { useSelector } from 'react-redux';
+
 
 const Navbar = () => {
 
 
   const { setSearch_2, serchValue } = useContext(AppContext);
+  const selector = useSelector((state) => state.cartPageReducer.cartData);
 
   return <>
     <div className='Header'>
@@ -53,7 +58,9 @@ const Navbar = () => {
 
           <Link to='/cartPage' style={{ textDecoration: 'none' }}>
             <div className='profile_and_cart'>
-              <ShoppingCartIcon style={{ alignSelf: "center" }} />
+              <Badge badgeContent={selector.length} color="primary">
+                <ShoppingCartIcon style={{ alignSelf: "center" }} />
+              </Badge>
               <p>Cart</p>
             </div>
           </Link>
