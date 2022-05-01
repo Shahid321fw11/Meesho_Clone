@@ -15,10 +15,9 @@ const CartPage = () => {
 
 
     return <>
-        <List sx={{ width: '60%', bgcolor: 'background.paper', }}>
+        <div style={{ width: "50%", margin: "auto", }}>
             {selector.map((e) => {
                 return <>
-                    {/* <Paper variant="outlined" elevation={3} > */}
                     <Card sx={{ margin: "10px", display: 'flex' }}>
                         <img src={e.images[0]} alt="image" style={{ border: "2px solid #ddd", borderRadius: '5', padding: "5px", maxWidth: "100px", minWidth: "100px", maxHeight: "100px", minHeight: "100px", marginTop: "auto", marginBottom: "auto" }} />
 
@@ -29,21 +28,15 @@ const CartPage = () => {
 
                             <div style={{ display: 'flex' }}>
                                 <Typography variant="overline" >Size:​{e.sizes}</Typography>
-                                {/* <Typography style={{ textDecoration: 'line-through', marginLeft: '1rem', color: 'lightslategray' }}>{e.original_price}</Typography> */}
-                                {/* <Typography style={{ marginLeft: '1rem', color: '#038D63' }}>{Math.floor(((e.original_price - e.discounted_price) / e.original_price) * 100)}% off</Typography> */}
                             </div>
 
                             <Typography style={{ color: 'lightslategray' }}>₹​{e.original_price - e.discounted_price}</Typography>
-
-
                         </CardContent>
                     </Card>
-                    {/* </Paper> */}
-
                 </>
 
             })}
-        </List>
+        </div>
     </>
 }
 
