@@ -13,6 +13,7 @@ import HomeKitchen from "./Components/Pages/HomeKitchen";
 import SearchPage from "./Components/Pages/SearchPage";
 import IndividualPage from "./Components/Pages/IndividualPage";
 import CartPage from "./Components/Pages/CartPage";
+import PageNotFound from "./Components/Pages/PageNotFound";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/search' element={<SearchPage />}></Route>
         <Route path='/ProductPage' element={<IndividualPage />}></Route>
         <Route path='/CartPage' element={<CartPage />}></Route>
+        <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
     </>
   );
