@@ -1,6 +1,5 @@
 import HomePage from "./Components/Pages/HomePage";
 import Navbar from "./Components/Pages/Navbar";
-import Product from "./Components/Pages/Product";
 import './Components/Pages/Navbar.css';
 import { Routes, Route } from 'react-router-dom';
 import WomenEthnic from "./Components/Pages/WomenEthnic";

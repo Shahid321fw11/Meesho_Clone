@@ -14,6 +14,11 @@ const IndividualPage = () => {
     console.log(productSelector);
 
 
+    const on_click_func = (productSelector) => {
+        dispatch(addToCart(productSelector));
+    }
+
+
 
     return <>
         <div style={{ marginTop: "10%", fontSize: 'large', fontWeight: 'bolder', marginLeft: '2%', marginRight: '2%' }} >
@@ -33,7 +38,7 @@ const IndividualPage = () => {
                             />
                         </Card>
                     </Paper>
-                    <Button variant="contained" style={{ width: '100%', backgroundColor: 'rgb(244, 51, 151)', marginTop: '5%' }} onClick={() => dispatch(addToCart(productSelector))} >Add To Cart</Button>
+                    <Button variant="contained" style={{ width: '100%', backgroundColor: 'rgb(244, 51, 151)', marginTop: '5%' }} onClick={() => on_click_func(productSelector)} >Add To Cart</Button>
                 </div>
             </div>
 
