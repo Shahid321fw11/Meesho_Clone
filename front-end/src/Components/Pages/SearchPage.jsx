@@ -6,7 +6,6 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import PageNotFound from './PageNotFound';
 
 
 
@@ -67,11 +66,6 @@ const SearchPage = () => {
 
         </div>
         }
-
-        {/* <div>
-            {serchValue}
-        </div> */}
-
     </>
 }
 

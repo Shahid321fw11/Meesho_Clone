@@ -14,14 +14,14 @@ import SearchPage from "./Components/Pages/SearchPage";
 import IndividualPage from "./Components/Pages/IndividualPage";
 import CartPage from "./Components/Pages/CartPage";
 import PageNotFound from "./Components/Pages/PageNotFound";
+import Footer from "./Components/Pages/footer";
 
 function App() {
   return (
     <>
       <Navbar />
-      {/* <HomePage /> */}
       <Routes>
-        <Route path='/' element={<Product />}></Route>
+        <Route path='/' element={<HomePage />}></Route>
         <Route exact path='/WomenEthnic' element={<WomenEthnic />}></Route>
         <Route path='/WomenWestern' element={<WomenWestern />}></Route>
         <Route path='/JewelleryAccessories' element={<JewelleryAccessories />}></Route>
@@ -34,6 +34,7 @@ function App() {
         <Route path='/CartPage' element={<CartPage />}></Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
+      <Footer />
     </>
   );
 }
