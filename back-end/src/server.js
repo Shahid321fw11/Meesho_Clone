@@ -1,12 +1,14 @@
 const express = require('express');
-const dotenv = require('dotenv');
 const connect = require('./config/db');
-
-dotenv.config();
-
-
 const app = express();
+app.use(express.json());
+
+const dotenv = require('dotenv');
+dotenv.config();
 const port = process.env.PORT;
+
+const productController = require('./Controllers/productController');
+app.use('/product', productController);
 
 
 app.listen(port, async () => {
