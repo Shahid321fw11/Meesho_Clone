@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Data from '../../data/db';
+import React, { useState, useEffect } from 'react';
+import * as Realm from 'realm-web';
 import Card from '@mui/material/Card';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';
@@ -11,6 +11,28 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Product = () => {
+
+    const [productData, setProductData] = useState([])
+    const getData = async () => {
+        const app = new Realm.App({ id: "products-fkscd" });
+        const credentials = Realm.Credentials.anonymous();
+        try {
+            const user = await app.logIn(credentials);
+            const allData = await user.functions.getAllData();
+            setProductData(allData)
+            // console.log("data", allData)
+        } catch (err) {
+            console.error("Failed to log in", err);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, [])
+    console.log("datafinal", productData)
+
+
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -25,7 +47,7 @@ const Product = () => {
 
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
                 {
-                    Data.map((e) => {
+                    productData.map((e) => {
                         return <>
                             <Card sx={{ width: '18rem', margin: "10px" }} onClick={() => {
                                 funDispatch(e);
