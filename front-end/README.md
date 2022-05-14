@@ -37,7 +37,7 @@ Buy & Sell best quality Fashion, Electronics, Home & Kitchen products at lowest 
 
 Just clone and follow these Simple steps:
 ```bash
-// for clone 
+// clone 
   git clone https://github.com/Shahid321fw11/Meesho_Clone.git
 
 // switch to front-End
