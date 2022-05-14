@@ -33,23 +33,18 @@ Buy & Sell best quality Fashion, Electronics, Home & Kitchen products at lowest 
 - Search option to Search for product
 
 - Indivisual Product description
-## How to run on your System.
 
-Just clone and follow these Simple steps:
+
+## 📌 How to run on your System.
+
+Follow these Simple steps:
+
 ```bash
-// clone 
-  git clone https://github.com/Shahid321fw11/Meesho_Clone.git
-
-// switch to front-End
- cd frond-end
-
-// Install dependencies 
-  npm i
-
-// start the code
-  npm start
+git clone https://github.com/Shahid321fw11/Meesho_Clone.git
+cd frond-end
+npm install
+npm start
 ```
-
-Isn't that easy? 😊
+Isn't that easy? I say na It's going to be simple.😊
 
     
