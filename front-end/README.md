@@ -50,4 +50,6 @@ Just clone and follow these Simple steps:
   npm start
 ```
 
+Isn't that easy? 😊
+
     
