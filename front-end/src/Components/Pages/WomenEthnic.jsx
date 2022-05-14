@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Data from '../../data/db'
 import Card from '@mui/material/Card';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';
@@ -9,22 +8,27 @@ import { productPageAction } from '../../Redux/Action/productPageAction';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-var data_sarees = Data.filter((e) => {
-    if (e.category === 'Sarees') {
-        return e;
-    }
-})
 
-const WomenEthnic = () => {
+const WomenEthnic = ({ productData }) => {
     // pagination
     const [currentPage, setCurrentPage] = useState(1);
     const [array, setArray] = useState([]);
     const postsPerPage = 10;
+
+    // filter saree.
+    var data_sarees = productData?.filter((e) => {
+        if (e.category === 'Sarees') {
+            return e;
+        }
+    })
+
+    // pagination complete.
     useEffect(() => {
         const start = currentPage * postsPerPage - postsPerPage;
         const end = currentPage * postsPerPage;
         setArray(data_sarees.slice(start, end));
     }, [currentPage]);
+
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -36,11 +40,10 @@ const WomenEthnic = () => {
     return <>
         <div style={{ marginTop: "10%", fontSize: 'large', fontWeight: 'bolder', marginLeft: '2%', marginRight: '2%' }} >
             <h1>Products For You</h1>
-
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
             {
-                array.map((e) => {
+                array?.map((e) => {
                     if (e.category === 'Sarees') {
                         return <>
                             <Card sx={{ width: '18rem', margin: "10px" }} onClick={() => {
@@ -80,6 +83,7 @@ const WomenEthnic = () => {
                 })
             }
         </div>
+        {/* <Pagin /> */}
         <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
             <button style={{ margin: '2%' }} onClick={() => { setCurrentPage(currentPage - 1) }} disabled={currentPage <= 1}>prev</button>
             <button style={{ margin: '2%' }} onClick={() => { setCurrentPage(currentPage + 1) }} disabled={currentPage === Math.floor(data_sarees.length / postsPerPage) + 1}  >Next</button>

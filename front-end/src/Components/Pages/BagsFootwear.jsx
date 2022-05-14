@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Data from '../../data/db'
 import Card from '@mui/material/Card';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';
@@ -9,23 +8,24 @@ import { productPageAction } from '../../Redux/Action/productPageAction';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-
-var data_dresses = Data.filter((e) => {
-    if (e.category === 'Bags and Footwear') {
-        return e;
-    }
-})
-
-const BagsFootwear = () => {
+const BagsFootwear = ({ productData }) => {
+    // pagination
     const [currentPage, setCurrentPage] = useState(1);
     const [array, setArray] = useState([]);
     const postsPerPage = 10;
+
+    // filtering men's product.
+    var data_dresses = productData?.filter((e) => {
+        if (e.category === 'Bags and Footwear') {
+            return e;
+        }
+    })
+
     useEffect(() => {
         const start = currentPage * postsPerPage - postsPerPage;
         const end = currentPage * postsPerPage;
         setArray(data_dresses.slice(start, end));
     }, [currentPage]);
-
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -33,8 +33,6 @@ const BagsFootwear = () => {
     const funDispatch = (data) => {
         dispatch(productPageAction(data));
     }
-
-
 
     return <>
         <div style={{ marginTop: "10%", fontSize: 'large', fontWeight: 'bolder', marginLeft: '2%', marginRight: '2%' }} >

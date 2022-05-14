@@ -16,6 +16,7 @@ const Navbar = () => {
 
 
   const { setSearch_2, serchValue } = useContext(AppContext);
+
   const selector = useSelector((state) => state.cartPageReducer.cartData);
 
   return <>

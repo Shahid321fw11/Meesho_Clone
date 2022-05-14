@@ -13,7 +13,6 @@ const IndividualPage = () => {
     const productSelector = useSelector((state) => state.productPageReducer.data);
     console.log(productSelector);
 
-
     const on_click_func = (productSelector) => {
         dispatch(addToCart(productSelector));
     }

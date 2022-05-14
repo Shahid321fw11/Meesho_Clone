@@ -2,7 +2,7 @@ import React from 'react'
 import './home.css'
 import Product from './Product';
 
-const HomePage = () => {
+const HomePage = (productData) => {
     return <>
         <div className='banner'>
             <div className='container'>

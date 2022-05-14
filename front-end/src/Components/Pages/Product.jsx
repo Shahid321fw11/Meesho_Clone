@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import * as Realm from 'realm-web';
 import Card from '@mui/material/Card';
 import StarRateIcon from '@mui/icons-material/StarRate';
@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Product = () => {
-
+    // fetching data from realm
     const [productData, setProductData] = useState([])
     const getData = async () => {
         const app = new Realm.App({ id: "products-fkscd" });
@@ -29,10 +29,11 @@ const Product = () => {
     useEffect(() => {
         getData();
     }, [])
-    console.log("datafinal", productData)
+    // console.log("datafinal product page", productData)
 
 
 
+    // redux part
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
