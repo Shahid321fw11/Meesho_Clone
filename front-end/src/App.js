@@ -49,7 +49,7 @@ function App() {
         <Route path='/BeautyAndHealth' element={<BeautyAndHealth productData={productData} />}></Route>
         <Route path='/BagsFootwear' element={<BagsFootwear productData={productData} />}></Route>
         <Route path='/HomeKitchen' element={<HomeKitchen productData={productData} />}></Route>
-        <Route path='/search' element={<SearchPage />}></Route>
+        <Route path='/search' element={<SearchPage productData={productData} />}></Route>
         <Route path='/ProductPage' element={<IndividualPage />}></Route>
         <Route path='/CartPage' element={<CartPage />}></Route>
         <Route path='*' element={<PageNotFound />}></Route>

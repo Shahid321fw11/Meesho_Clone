@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../Models/productModel');
 
-
 // crud api for product
 
 // post a product 
@@ -10,8 +9,7 @@ router.post('/', async (req, res) => {
     const product = new Product(req.body);
     await product.save();
     res.status(201).send(product);
-}
-);
+});
 
 // get all products
 router.get('/', async (req, res) => {

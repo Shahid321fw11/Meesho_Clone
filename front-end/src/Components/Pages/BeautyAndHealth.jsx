@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Data from '../../data/db'
+// import Data from '../../data/db'
 import Card from '@mui/material/Card';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';

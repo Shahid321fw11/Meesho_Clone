@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../../Context/searchContext';
-import Data from '../../data/db';
 import Card from '@mui/material/Card';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import CardContent from '@mui/material/CardContent';
@@ -9,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 
 
-const SearchPage = () => {
+const SearchPage = ({ productData }) => {
 
     const { setSearch_2, serchValue } = useContext(AppContext);
     return <>
@@ -18,7 +17,7 @@ const SearchPage = () => {
         </div>
         {<div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
             {
-                Data.filter((e) => {
+                productData.filter((e) => {
                     if (serchValue === '') {
                         return e;
                     }
