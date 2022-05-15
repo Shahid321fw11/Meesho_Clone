@@ -35,7 +35,15 @@ Buy & Sell best quality Fashion, Electronics, Home & Kitchen products at lowest 
 
 ## Screenshots
 
-![App Screenshot](C:\Users\91852\Desktop\work\Meesho_Clone\back-end\src\ScreenShots\PostAProduct.png)
-
+![App Screenshot](https://github.com/Shahid321fw11/Meesho_Clone/blob/main/back-end/src/ScreenShots/PostAProduct.png?raw=true)
 * Adding A Product
 
+
+![App Screenshot](https://github.com/Shahid321fw11/Meesho_Clone/blob/main/back-end/src/ScreenShots/PostAProduct.png?raw=true)
+* Getting All Products
+
+![App Screenshot](https://github.com/Shahid321fw11/Meesho_Clone/blob/main/back-end/src/ScreenShots/DeleteById.png?raw=true)
+* Deleting A Product by Id
+
+
+## 📝 Thank you for reading.
