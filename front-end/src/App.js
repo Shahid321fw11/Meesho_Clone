@@ -16,6 +16,7 @@ import IndividualPage from "./Components/Pages/IndividualPage";
 import CartPage from "./Components/Pages/CartPage";
 import PageNotFound from "./Components/Pages/PageNotFound";
 import Footer from "./Components/Pages/footer";
+import './App.css'
 
 function App() {
 
